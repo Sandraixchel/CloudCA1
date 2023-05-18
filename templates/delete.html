@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/delete_book/{{ book.id }}" method="POST">
+            <h2>Are you sure you want to delete this book?</h2>
+            <ul>
+                <li>Id: {{ book.id }}</li>
+                <li>Title: {{ book.title }}</li>
+                <li>Author: {{ book.author }}</li>
+                <li>Price: {{ book.price }}</li>
+            </ul>
+            <button type="submit">Delete</button>
+        </form>
+
+    </body>
+</html>
