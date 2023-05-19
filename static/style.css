@@ -37,9 +37,12 @@ table {
 }
 th {
   font-size: 25px;
+  background-color: rgb(216, 225, 224);
   color: rgb(30, 31, 31);
   text-align: left;
   padding: 15px;
+  position: sticky;
+  top: 0;
 }
 td {
   font-size: 18px;
@@ -47,9 +50,26 @@ td {
   padding: 15px;
   text-align: left;
 }
+tr:hover {
+  background-color: rgb(255, 252, 80);
+}
 
 ul {
-  font-size: 25px;
+  font-size: 19px;
   color: rgb(30, 31, 31);
   text-align: left;
+}
+.Update {
+  color: rgb(216, 225, 224);
+  text-align: center;
+  font-size: 70px;
+  margin-bottom: 10px;
+  font-weight: 50px;
+}
+.Delete {
+  color: rgb(216, 225, 224);
+  text-align: center;
+  font-size: 70px;
+  margin-bottom: 10px;
+  font-weight: 50px;
 }

@@ -19,20 +19,20 @@
         <th>Year</th>
         <th>Price</th>
       </tr>
-      {% for book in data %}
+      {% for movie in data %}
       <tr>
-        <td>{{ book.title }}</td>
-        <td>{{ book.director }}</td>
-        <td>{{ book.gender }}</td>
-        <td>{{ book.year }}</td>
-        <td>{{ book.price }}</td>
-        <td><a href="/delete_book/{{ book.id }}">Delete</a></td>
-        <td><a href="/update_book/{{ book.id }}">Update</a></td>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.gender }}</td>
+        <td>{{ movie.year }}</td>
+        <td>{{ movie.price }}</td>
+        <td><a href="/delete_movie/{{ movie.id }}">Delete</a></td>
+        <td><a href="/update_movie/{{ movie.id }}">Update</a></td>
       </tr>
       {% endfor %}
     </table>
 
-    <form action="/add_book" method="POST">
+    <form action="/add_movie" method="POST">
       <h4>New DVD:</h4>
       <ul>
         <li>Id <input type="int" name="id" /></li>

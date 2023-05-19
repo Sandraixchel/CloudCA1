@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request, render_template, redirect
 app = Flask(__name__)
 
-books = [
+movies = [
   {
     "id": 1,
     "title": "Becoming",
@@ -51,6 +51,39 @@ books = [
     "price": 22.99 
   },
   {
+    "id": 7,
+    "title": "From",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+  {
+    "id": 8,
+    "title": "From",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+  {
+    "id": 9,
+    "title": "From",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+  {
+    "id": 10,
+    "title": "From",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+  
+  {
     "id": 3,
     "title": "Humans of New York",
     "author": "Brandon Stanton",
@@ -62,58 +95,62 @@ books = [
 #curl http://localhost:5000
 @app.get('/')
 def index():
-  return render_template('index.html', data = books)
+  return render_template('index.html', data = movies)
 
 #curl http://localhost:5000/books
-@app.get('/books')
+@app.get('/movies')
 def hello():
-  return jsonify(books)
+  return jsonify(movies)
 
 #curl http://localhost:5000/book/1
-@app.get('/book/<int:id>')
-def get_book(id):
-  for book in books:
-    if book["id"] == id:
-        return jsonify(book)
-  return f'Book with id {id} not found', 404
+@app.get('/movie/<int:id>')
+def get_movie(id):
+  for movie in movies:
+    if movie["id"] == id:
+        return jsonify(movie)
+  return f'Movie with id {id} not found', 404
 
 #curl http://localhost:5000/add_book --request POST --data '{"id":3,"author":"aaa","title":"bbb","price":99.99}' --header "Content-Type: application/json"
-@app.post("/add_book")
-def add_book():
+@app.post("/add_movie")
+def add_movie():
   #data = request.get_json()
   new_id = int(request.form['id'])
   new_title = request.form['title']
-  new_author = request.form['author']
+  new_director = request.form['director']
+  new_gender = request.form['gender']
+  new_year = request.form['year']
   new_price = float(request.form['price'])
-  new_book = {"id": new_id, "title": new_title, "author": new_author, "price": new_price }
-  books.append(new_book)
+  new_movie = {"id": new_id, "title": new_title, "director": new_director, "gender": new_gender, "year": new_year, "price": new_price }
+  movies.append(new_movie)
   return redirect('/')
   
 
 #curl http://localhost:5000/update_book/2 --request POST --data '{"author":"ccc","title":"ddd","price":999.99}' --header "Content-Type: application/json"
-@app.route('/update_book/<int:id>', methods=['GET','POST'])
-def update_book(id):  
-  for book in books:
-    if book["id"] == id:
+@app.route('/update_movie/<int:id>', methods=['GET','POST'])
+def update_movie(id):  
+  for movie in movies:
+    if movie["id"] == id:
         if request.method=="POST":
-          book["id"] = int(request.form['id'])
-          book["title"] = request.form['title']
-          book["author"] = request.form['author']
-          book["price"] = float(request.form['price'])
+          movie["id"] = int(request.form['id'])
+          movie["title"] = request.form['title']
+          movie["director"] = request.form['director']
+          movie["gender"] = request.form['gender']
+          movie["year"] = request.form['year']
+          movie["price"] = float(request.form['price'])
           return redirect('/')
         else:
-          return render_template('update.html', book = book)
-  return f'Book with id {id} not found', 404
+          return render_template('update.html', movie = movie)
+  return f'Movie with id {id} not found', 404
 
 #curl http://localhost:5000/delete_book/1 --request DELETE
-@app.route('/delete_book/<int:id>', methods=['GET','POST'])
-def delete_book(id):
-  for book in books:
-    if book["id"] == id:
+@app.route('/delete_movie/<int:id>', methods=['GET','POST'])
+def delete_movie(id):
+  for movie in movies:
+    if movie["id"] == id:
         if request.method=="POST":
-          books.remove(book)
+          movies.remove(movie)
           return redirect('/')
         else:
-          return render_template('delete.html', book = book)
-  return f'Book with id {id} not found', 404
+          return render_template('delete.html', movie = movie)
+  return f'Movie with id {id} not found', 404
 

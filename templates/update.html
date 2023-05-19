@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <form action="/update_book/{{ book.id }}" method="POST">
-            <h2>Update Book:</h2>
-            <ul>
-                <li>Id <input type="int" name="id" value="{{ book.id }}"></li>
-                <li>Title <input type="text" name="title" value="{{ book.title }}"></li>
-                <li>Author <input type="text" name="author" value="{{ book.author }}"></li>
-                <li>Price <input type="text" name="price" value="{{ book.price }}"></li>
-            </ul>
-            <button type="submit">Update</button>
-        </form>
-
-    </body>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <form action="/update_movie/{{ movie.id }}" method="POST">
+      <h2 class="Update">Update Movie:</h2>
+      <ul>
+        <li>Id <input type="int" name="id" value="{{ movie.id }}" /></li>
+        <li>
+          Title <input type="text" name="title" value="{{ movie.title }}" />
+        </li>
+        <li>
+          Director
+          <input type="text" name="director" value="{{ movie.director }}" />
+        </li>
+        <li>
+          Gender
+          <input type="text" name="gender" value="{{ movie.gender }}" />
+        </li>
+        <li>
+          Year
+          <input type="text" name="year" value="{{ movie.year }}" />
+        </li>
+        <li>
+          Price <input type="text" name="price" value="{{ movie.price }}" />
+        </li>
+      </ul>
+      <button type="submit">Update</button>
+    </form>
+  </body>
 </html>
