@@ -6,7 +6,7 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
-  <body>
+  <body class="requests">
     <form action="/update_movie/{{ movie.id }}" method="POST">
       <h2 class="Update">Update Movie:</h2>
       <ul>
@@ -32,5 +32,6 @@
       </ul>
       <button type="submit">Update</button>
     </form>
+    <footer>Sandra López, CCT College Dublin</footer>
   </body>
 </html>

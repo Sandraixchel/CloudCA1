@@ -16,8 +16,8 @@
         <th>Movie Title</th>
         <th>Director</th>
         <th>Gender</th>
-        <th>Year</th>
-        <th>Price</th>
+        <th>Year of Release</th>
+        <th>Price per Week</th>
       </tr>
       {% for movie in data %}
       <tr>
@@ -26,7 +26,11 @@
         <td>{{ movie.gender }}</td>
         <td>{{ movie.year }}</td>
         <td>{{ movie.price }}</td>
-        <td><a href="/delete_movie/{{ movie.id }}">Delete</a></td>
+        <td>
+          <a class="delete_button" href="/delete_movie/{{ movie.id }}"
+            >Delete</a
+          >
+        </td>
         <td><a href="/update_movie/{{ movie.id }}">Update</a></td>
       </tr>
       {% endfor %}
@@ -45,5 +49,6 @@
 
       <button type="submit">Add</button>
     </form>
+    <footer>Sandra López, CCT College Dublin</footer>
   </body>
 </html>

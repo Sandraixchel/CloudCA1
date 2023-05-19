@@ -97,12 +97,12 @@ movies = [
 def index():
   return render_template('index.html', data = movies)
 
-#curl http://localhost:5000/books
+#curl http://localhost:5000/movies
 @app.get('/movies')
 def hello():
   return jsonify(movies)
 
-#curl http://localhost:5000/book/1
+#curl http://localhost:5000/movie/1
 @app.get('/movie/<int:id>')
 def get_movie(id):
   for movie in movies:
@@ -110,7 +110,7 @@ def get_movie(id):
         return jsonify(movie)
   return f'Movie with id {id} not found', 404
 
-#curl http://localhost:5000/add_book --request POST --data '{"id":3,"author":"aaa","title":"bbb","price":99.99}' --header "Content-Type: application/json"
+#curl http://localhost:5000/add_movie --request POST --data '{"id":3,"director":"aaa","title":"bbb", "gender":"ccc", "year": "ddd", price":99.99}' --header "Content-Type: application/json"
 @app.post("/add_movie")
 def add_movie():
   #data = request.get_json()
@@ -125,7 +125,7 @@ def add_movie():
   return redirect('/')
   
 
-#curl http://localhost:5000/update_book/2 --request POST --data '{"author":"ccc","title":"ddd","price":999.99}' --header "Content-Type: application/json"
+#curl http://localhost:5000/update_movie/2 --request POST --data '{"id":3,"director":"aaa","title":"bbb", "gender":"ccc", "year": "ddd", price":99.99}' --header "Content-Type: application/json"
 @app.route('/update_movie/<int:id>', methods=['GET','POST'])
 def update_movie(id):  
   for movie in movies:
@@ -142,7 +142,7 @@ def update_movie(id):
           return render_template('update.html', movie = movie)
   return f'Movie with id {id} not found', 404
 
-#curl http://localhost:5000/delete_book/1 --request DELETE
+#curl http://localhost:5000/delete_movie/1 --request DELETE
 @app.route('/delete_movie/<int:id>', methods=['GET','POST'])
 def delete_movie(id):
   for movie in movies:

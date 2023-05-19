@@ -7,6 +7,7 @@ body {
     rgba(45, 116, 213, 1) 11.2%,
     rgba(121, 137, 212, 1) 91.2%
   );
+  font-size: 20px;
 }
 
 h1 {
@@ -62,14 +63,39 @@ ul {
 .Update {
   color: rgb(216, 225, 224);
   text-align: center;
-  font-size: 70px;
+  font-size: 60px;
   margin-bottom: 10px;
   font-weight: 50px;
 }
 .Delete {
   color: rgb(216, 225, 224);
   text-align: center;
-  font-size: 70px;
+  font-size: 60px;
   margin-bottom: 10px;
   font-weight: 50px;
+}
+
+.requests {
+  font-size: 20px;
+  color: rgb(30, 31, 31);
+  text-align: left;
+}
+
+button {
+  background-color: #6cc439;
+  border: rgb(30, 31, 31);
+  color: rgb(216, 225, 224);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+  border-radius: 20px;
+}
+
+footer {
+  text-align: right;
+  position: sticky;
+  color: rgb(48, 50, 50);
+  font-size: 20px;
 }

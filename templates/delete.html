@@ -6,7 +6,7 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
-  <body>
+  <body class="requests">
     <form action="/delete_movie/{{ movie.id }}" method="POST">
       <h2 class="Delete">
         Last change, do you really want to delete this movie?
@@ -21,5 +21,6 @@
       </ul>
       <button type="submit">Delete</button>
     </form>
+    <footer>Sandra López, CCT College Dublin</footer>
   </body>
 </html>
