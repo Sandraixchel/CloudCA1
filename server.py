@@ -5,15 +5,58 @@ books = [
   {
     "id": 1,
     "title": "Becoming",
-    "author": "Michelle Obama",
+    "director": "Michelle Obama",
+    "gender": "Drama",
+    "year" : "2010",
     "price": 22.99 
   },
   {
     "id": 2,
+    "title": "Inception",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+   {
+    "id": 3,
+    "title": "Barbie",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+   {
+    "id": 4,
+    "title": "Super Mario",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+   {
+    "id": 5,
+    "title": "Batman",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+   {
+    "id": 6,
+    "title": "From",
+    "director": "C. Nolan",
+    "gender": "Drama",
+    "year" : "2010",
+    "price": 22.99 
+  },
+  {
+    "id": 3,
     "title": "Humans of New York",
     "author": "Brandon Stanton",
     "price": 19.99 
-  }  
+  },
+  
 ]
 
 #curl http://localhost:5000

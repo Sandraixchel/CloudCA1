@@ -6,21 +6,25 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
+
   <body>
-    <h1>Hi, welcome to our dvd store!!!!</h1>
-    <h2>Books:</h2>
+    <h1>Welcome to Cov@net</h1>
+    <h2>Your favorite DVD rental store!</h2>
+    <h3>Our DVDs:</h3>
     <table>
       <tr>
-        <th>Title</th>
-        <th>Author</th>
+        <th>Movie Title</th>
+        <th>Director</th>
+        <th>Gender</th>
+        <th>Year</th>
         <th>Price</th>
-        <th></th>
-        <th></th>
       </tr>
       {% for book in data %}
       <tr>
         <td>{{ book.title }}</td>
-        <td>{{ book.author }}</td>
+        <td>{{ book.director }}</td>
+        <td>{{ book.gender }}</td>
+        <td>{{ book.year }}</td>
         <td>{{ book.price }}</td>
         <td><a href="/delete_book/{{ book.id }}">Delete</a></td>
         <td><a href="/update_book/{{ book.id }}">Update</a></td>
@@ -29,11 +33,13 @@
     </table>
 
     <form action="/add_book" method="POST">
-      <h2>New Book:</h2>
+      <h4>New DVD:</h4>
       <ul>
         <li>Id <input type="int" name="id" /></li>
-        <li>Title <input type="text" name="title" /></li>
-        <li>Author <input type="text" name="author" /></li>
+        <li>Movie Title <input type="text" name="title" /></li>
+        <li>Director <input type="text" name="director" /></li>
+        <li>Gender <input type="text" name="gender" /></li>
+        <li>Year <input type="text" name="year" /></li>
         <li>Price <input type="text" name="price" /></li>
       </ul>
 
