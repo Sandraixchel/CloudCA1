@@ -6,11 +6,9 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
-  <body class="requests">
-    <form action="/delete_movie/{{ movie.id }}" method="GET">
-      <h2 class="Delete">
-        Last change, do you really want to delete this movie?
-      </h2>
+  <body>
+    <form action="/movie/id{{ movie.id }}" method="GET">
+      <h2 class="Update">Here's more information about this movie:</h2>
       <ul>
         <li>Id: {{ movie.id }}</li>
         <li>Title: {{ movie.title }}</li>
@@ -19,7 +17,7 @@
         <li>Year: {{ movie.year }}</li>
         <li>Price: {{ movie.price }}</li>
       </ul>
-      <button type="submit">Delete</button>
+      <a href="/" class="GoBack"> Go Back </a>
     </form>
     <footer>Sandra López, CCT College Dublin</footer>
   </body>

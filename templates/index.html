@@ -27,11 +27,10 @@
         <td>{{ movie.year }}</td>
         <td>{{ movie.price }}</td>
         <td>
-          <a class="delete_button" href="/delete_movie/{{ movie.id }}"
-            >Delete</a
-          >
+          <a href="/delete_movie/{{ movie.id }}">Delete</a>
         </td>
         <td><a href="/update_movie/{{ movie.id }}">Update</a></td>
+        <td><a href="/movie/{{ movie.id }}">Get Info</a></td>
       </tr>
       {% endfor %}
     </table>

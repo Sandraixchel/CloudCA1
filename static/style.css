@@ -99,3 +99,15 @@ footer {
   color: rgb(48, 50, 50);
   font-size: 20px;
 }
+
+.GoBack {
+  background-color: #6cc439;
+  border: rgb(30, 31, 31);
+  color: rgb(216, 225, 224);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+  border-radius: 20px;
+}

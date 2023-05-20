@@ -107,7 +107,7 @@ def hello():
 def get_movie(id):
   for movie in movies:
     if movie["id"] == id:
-        return jsonify(movie)
+        return render_template('getInfo.html', movie = movie)
   return f'Movie with id {id} not found', 404
 
 #curl http://localhost:5000/add_movie --request POST --data '{"id":3,"director":"aaa","title":"bbb", "gender":"ccc", "year": "ddd", price":99.99}' --header "Content-Type: application/json"
@@ -123,6 +123,9 @@ def add_movie():
   new_movie = {"id": new_id, "title": new_title, "director": new_director, "gender": new_gender, "year": new_year, "price": new_price }
   movies.append(new_movie)
   return redirect('/')
+
+
+
   
 
 #curl http://localhost:5000/update_movie/2 --request POST --data '{"id":3,"director":"aaa","title":"bbb", "gender":"ccc", "year": "ddd", price":99.99}' --header "Content-Type: application/json"
