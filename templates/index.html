@@ -15,7 +15,7 @@
       <tr>
         <th>Movie Title</th>
         <th>Director</th>
-        <th>Gender</th>
+        <th>Genre</th>
         <th>Year of Release</th>
         <th>Price per Week</th>
       </tr>
@@ -30,7 +30,7 @@
           <a href="/delete_movie/{{ movie.id }}">Delete</a>
         </td>
         <td><a href="/update_movie/{{ movie.id }}">Update</a></td>
-        <td><a href="/movie/{{ movie.id }}">Get Info</a></td>
+        <td><a href="/movie/{{ movie.id }}">Get More Info</a></td>
       </tr>
       {% endfor %}
     </table>
